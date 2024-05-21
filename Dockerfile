@@ -5,11 +5,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm ci
 
-COPY . .
+COPY src ./src
+COPY migrations ./migrations
+COPY tsconfig.json ./
 
 RUN npm run build
 
-# Command to run your app
-CMD ["node", "dist/migrate up"]
+CMD ["node", "dist/migrate.js", "up"]

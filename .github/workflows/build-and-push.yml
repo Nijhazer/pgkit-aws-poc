@@ -1,5 +1,5 @@
 
-name: Deploy to AWS ECS
+name: Build and push container image
 
 on: workflow_dispatch
 
